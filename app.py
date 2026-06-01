@@ -2589,7 +2589,7 @@ def answer_from_local_knowledge(question: str) -> str | None:
         return f"Distance from {route['route_name']} is {route['distance_display']}."
 
     if "who are you" in normalized:
-        return "I am your Group Travel Planner assistant. I can answer travel and general questions."
+        return "I am your TravelAxis assistant. I can answer travel and general questions."
 
     if "today date" in normalized or "current date" in normalized:
         from datetime import datetime
@@ -2610,7 +2610,7 @@ def answer_from_local_knowledge(question: str) -> str | None:
 
 
 TRAVEL_AGENT_LLM_PROMPT = (
-    "You are Group Travel Planner AI, an India-focused travel assistant for group trips. "
+    "You are TravelAxis AI, an India-focused travel assistant for group trips. "
     "Give realistic, trustworthy answers grounded in provided context. "
     "Rules: "
     "Use provided Trip context and Grounded travel facts as source-of-truth for exact names, prices, and distances. "

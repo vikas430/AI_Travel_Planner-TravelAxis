@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Chatbot | Group Travel Planner</title>
+    <title>AI Chatbot | TravelAxis</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
@@ -14,15 +14,19 @@
         <div class="dashboard-shell">
             <header class="topbar">
                 <div class="brand">
-                    <div class="brand-mark"><img src="{{ url_for('static', filename='images/gtp-logo.svg') }}" alt="Group Travel Planner logo"></div>
+                    <div class="brand-mark"><img src="{{ url_for('static', filename='images/gtp-logo.svg') }}"
+                            alt="TravelAxis logo"></div>
                     <div class="brand-text">
                         <p class="brand-title">AI Travel Assistant</p>
                         <p class="brand-sub">Ask destination and visited-place questions</p>
                     </div>
                 </div>
                 <nav class="menu">
-                    <a href="{{ url_for('dashboard', starting_point=form.starting_point, destination=form.destination, budget=form.budget, people=form.people) }}">Dashboard</a>
-                    <a href="{{ url_for('hotels_page', starting_point=form.starting_point, destination=form.destination, budget=form.budget, people=form.people) }}">Hotels Page</a>
+                    <a
+                        href="{{ url_for('dashboard', starting_point=form.starting_point, destination=form.destination, budget=form.budget, people=form.people) }}">Dashboard</a>
+                    <a
+                        href="{{ url_for('hotels_page', starting_point=form.starting_point, destination=form.destination, budget=form.budget, people=form.people) }}">Hotels
+                        Page</a>
                 </nav>
                 <div class="profile">
                     <span class="profile-dot"></span>
@@ -37,7 +41,8 @@
                     <p id="action-output">{{ action_output }}</p>
                     <form class="trip-form" onsubmit="return false;">
                         <label for="starting_point">Starting Point</label>
-                        <input id="starting_point" name="starting_point" value="{{ form.starting_point }}" list="india-places">
+                        <input id="starting_point" name="starting_point" value="{{ form.starting_point }}"
+                            list="india-places">
 
                         <label for="destination">Destination</label>
                         <input id="destination" name="destination" value="{{ form.destination }}" list="india-places">
@@ -50,14 +55,16 @@
                         <label for="people">People</label>
                         <select id="people" name="people">
                             {% for value in [2, 3, 4, 5, 6, 8] %}
-                            <option value="{{ value }}" {% if form.people == value %}selected{% endif %}>{{ value }}</option>
+                            <option value="{{ value }}" {% if form.people==value %}selected{% endif %}>{{ value }}
+                            </option>
                             {% endfor %}
                         </select>
 
                         <label for="budget">Budget</label>
                         <select id="budget" name="budget">
                             {% for value in [15000, 20000, 30000, 45000, 60000] %}
-                            <option value="{{ value }}" {% if form.budget == value %}selected{% endif %}>Rs {{ value }}</option>
+                            <option value="{{ value }}" {% if form.budget==value %}selected{% endif %}>Rs {{ value }}
+                            </option>
                             {% endfor %}
                         </select>
                     </form>
@@ -71,7 +78,8 @@
                 <section class="card chat-card">
                     <h2>AI Travel Assistant</h2>
                     <div class="chat-window" id="chat-window">
-                        <div class="message bot">Hi! Ask me about itinerary, places, food, activities, budget, hotels, and visited places.</div>
+                        <div class="message bot">Hi! Ask me about itinerary, places, food, activities, budget, hotels,
+                            and visited places.</div>
                     </div>
                     <div class="quick-replies">
                         {% for reply in quick_replies %}

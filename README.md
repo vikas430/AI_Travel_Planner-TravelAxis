@@ -1,4 +1,4 @@
-# Group Travel Planner
+# TravelAxis
 
 A Flask-based travel dashboard website with:
 - Trip planning form
@@ -145,7 +145,7 @@ python -m venv .venv
    - `Terminal` > `Run Task...` > `Run app`
 8. Or run with Debug:
    - Open `Run and Debug` panel (`Ctrl+Shift+D`)
-   - Select `Run Group Travel Planner`
+   - Select `Run TravelAxis`
    - Click `Start Debugging` (F5)
 9. Open browser:
    - `http://127.0.0.1:5000`
