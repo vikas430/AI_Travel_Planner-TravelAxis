@@ -15,6 +15,9 @@ from urllib import parse as urlparse
 from urllib import request as urlrequest
 
 from flask import Flask, flash, jsonify, redirect, render_template, request, session, url_for
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "group-travel-planner-dev-key")
