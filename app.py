@@ -7,7 +7,6 @@ import operator
 import os
 import random
 import re
-import secrets
 import time
 from datetime import datetime, timedelta
 from copy import deepcopy
@@ -27,7 +26,7 @@ def env_value(name: str, default: str = "") -> str:
     return os.getenv(name, default).strip()
 
 
-app.secret_key = env_value("FLASK_SECRET_KEY") or secrets.token_urlsafe(32)
+app.secret_key = env_value("FLASK_SECRET_KEY") or "travelaxis-local-demo-session-key"
 GOOGLE_MAPS_API_KEY = env_value("GOOGLE_MAPS_API_KEY")
 OPENAI_API_KEY = env_value("OPENAI_API_KEY")
 OPENAI_MODEL = env_value("OPENAI_MODEL", "openai/gpt-3.5-turbo")
